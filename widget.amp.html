@@ -1,0 +1,377 @@
+<!--
+## Introduction
+
+This sample demonstrates how to build an AMP-powered email that contains a simple interactive survey.
+-->
+
+<!-- -->
+<!doctype html>
+<html amp4email lang="en" data-css-strict>
+
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Import the `amp-list` component ... -->
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <!-- ... and the `amp-mustache` component in the header. -->
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <!-- Import the `amp-bind` component for dynamically changing the content of an `amp-list`. -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <style amp4email-boilerplate>
+        body {
+            visibility: hidden
+        }
+    </style>
+    <style amp-custom>
+        table {
+            width: 100%;
+        }
+
+        th {
+            width: 33%;
+            color: #66666a;
+        }
+
+        td {
+            color: #0e0000;
+            font-weight: bold;
+            padding-top: 1ch;
+            padding-bottom: 1ch;
+        }
+
+        .price {
+            font-weight: normal;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h1 {
+            color: #ffffff;
+            opacity: 0.94;
+        }
+
+        h3 {
+            margin: 0px;
+        }
+
+        body {
+            background-color: #fafafa;
+        }
+
+        .left {
+            text-align: left;
+            width: 60%;
+        }
+
+        .center {
+            text-align: end;
+            width: 20%;
+        }
+
+        .right {
+            text-align: right;
+            width: 20%;
+        }
+
+        .refresh-btn {
+            background-color: #ffff;
+            border: 1px solid #292c2e;
+            border-radius: 4px;
+            box-shadow: transparent;
+            padding: 10px 16px;
+
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        hr {
+            border-top: 1px solid black;
+            opacity: 0.84;
+        }
+
+        .refresh-btn:hover {
+            opacity: 0.74;
+        }
+
+        .refresh-btn-text {
+            color: #292c2e;
+            font-weight: bolder;
+            font-size: 14px;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            opacity: 0.84;
+            align-items: flex-start;
+        }
+
+        .icon-img {
+            margin-right: 1ch;
+        }
+
+        .crypto-list {
+            width: 80%;
+            list-style-type: none;
+            text-align: left;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            font-family: sans-serif;
+            padding: 1em;
+            text-align: center;
+            background-color: #ffff;
+            position: relative;
+        }
+
+        .crypto-list-container {
+            width: 70%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+
+        .red-text {
+            color: #dc3547;
+            /* background-color: #fff0f5; */
+        }
+
+        .green-text {
+            color: #6aa468;
+            /* background-color:#f0fff0; */
+        }
+
+        .sym-price {
+            color: #9a94c1;
+        }
+
+        .crypto-name {
+            max-width: 45ch;
+            margin: 0;
+        }
+
+        .block {
+            display: block;
+            width: 100%;
+        }
+
+        .m1 {
+            margin: 1em 0;
+        }
+
+        .hero-img {
+            width: 2rem;
+
+        }
+
+        .hero-date {
+            width: 35%;
+            text-align: right;
+            color: #202125;
+            opacity: 0.94;
+        }
+
+        label {
+            margin-bottom: 0.5em;
+        }
+
+        .highlights {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .highlight-data {
+            font-weight: bold;
+        }
+
+        .highlight-label {
+            color: #727884;
+        }
+        .greet{
+            text-align: left;
+        }
+        .text-contents{
+            text-align: justify;
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+        }
+        .salutation{
+            text-align: left;
+            padding-top:1rem ;
+            padding-bottom: 1.5rem;
+        }
+        .date-container{
+            position: absolute;
+            top: 12px;
+            width: 400px;
+            left: 70%;
+        }
+        @media only screen and (max-width: 600px) {
+            .refresh-btn{
+                margin-top: 0.5rem;
+                margin-bottom: 0.9rem;
+                padding: 6px 12px;
+
+            }
+            .refresh-btn-text {
+            color: #292c2e;
+            font-weight: bolder;
+            font-size: 0.9rem;
+        }
+            .hero-date {
+                font-size:0.9rem;
+            }
+            .highlight-data{
+                font-size:0.9rem;
+
+            }.highlight-label{
+                font-size:0.9rem;
+
+            }
+            .left{
+                font-size:0.9rem;
+
+            }
+            .center{
+                font-size:0.9rem;
+
+            }
+            .right{
+                font-size:0.9rem;
+            }
+           .date-container{
+           		 position: absolute;
+            	top: 12px;
+            	width: 400px;
+            	left: 60%;
+        	}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--
+      The main content of the email, an image and a short description of the event.
+    -->
+        <div class="hero">
+
+            <amp-img class=" hero-img" width="120" height="120" layout="responsive"
+                src="https://crypto.marketswiki.com/images/1/1d/Coinmarketcap_logo.png"></amp-img>
+
+
+
+        </div>
+
+        <div class="text-contents">
+            <p class="greet">
+                Hi there,
+            </p>
+            <p >
+                The crypto/stock industry moves extremely fast. In fact so fast that emails sent minutes ago are already old news. We at Mailmodo are now solving this with our dynamic emails. Here is a live widget with real-time crypto prices from one of the leading aggregators CoinMarketCap
+            </p>
+        </div>
+
+        <div class="date-container">
+            <amp-list class="hero-date" id="dateList" layout="fixed-height" height="60" src="https://crypto-table-amp.glitch.me/date/" binding="refresh">
+                <template type="amp-mustache">
+                    <h3>{{date}}</h3>
+                </template>
+            </amp-list>
+        </div>
+        <hr>
+        <amp-list id="myList2" layout="fixed-height" height="90" src="https://crypto-table-amp.glitch.me/data-other/" binding="refresh">
+            <template type="amp-mustache">
+                <div class="highlights">
+                    <div>
+                        <p class="highlight-data">&#36;{{total_market_cap}}</p>
+                        <p class="highlight-label">Market Cap</p>
+                    </div>
+                    <div>
+                        <p class="highlight-data">&#36;{{total_volume_24h}}</p>
+                        <p class="highlight-label">24H Volume</p>
+                    </div>
+                    <div>
+                        <p class="highlight-data">{{btc_dom}}%</p>
+                        <p class="highlight-label">BTC Dom</p>
+                    </div>
+                    <div>
+                        <p class="highlight-data">{{eth_dom}}%</p>
+                        <p class="highlight-label">ETH Dom</p>
+                    </div>
+                </div>
+            </template>
+        </amp-list>
+
+        <hr>
+
+        <table>
+            <tbody>
+                <thead>
+                    <tr>
+                        <!-- <th class="left">Rank</th> -->
+                        <th class="left">Name</th>
+                        <th class="center">Price</th>
+                        <th class="right">24H</th>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>
+
+        <!-- <tr>
+                    <td class="left">1</td>
+                    <td class="left">Bitcoin</td>
+                    <td class="right price">$32,765</td>
+                    <td class="right green-text">-6.12%</td>
+                </tr> -->
+        <amp-list id="myList" width="auto" height="250" layout="fixed-height" src="https://crypto-table-amp.glitch.me/data/">
+            <template type="amp-mustache">
+                <table>
+                    <tbody>
+                        <tr>
+                            <!-- <td style="width: 25%;" class="left">{{crypto.rank}}</td> -->
+                            <td style="width: 60%;" class="left">
+                                <div class="list-container">
+                                    <amp-img class="icon-img" width="16" height="16" src="{{crypto.symbol_img}}">
+                                    </amp-img>
+                                    <p class="crypto-list crypto-name">{{crypto.name}}</p>
+                                </div>
+                            </td>
+                            <td style="width: 20%;" class="center price">&#36;{{crypto.price}}</td>
+                            <td style="width: 20%;" class="right {{crypto.class_name}}">{{crypto.change_h}}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </template>
+        </amp-list>
+
+        <button class="refresh-btn" on="tap:myList.refresh,myList2.refresh,dateList.refresh;"><span class="refresh-btn-text">Refresh
+                Prices</span></button>
+
+        <div class="text-contents">
+            If your emails include crypto/stock prices, we can help you make them live from your own data source. Get in touch with us: <a href="mailto:aquib@mailmodo.com">aquib@mailmodo.com</a>
+  
+        </div>
+        <div class="salutation">
+            Regards,<br/>
+            Aquibur,<br/>
+            CEO Mailmodo<br/>
+        </div>
+    </div>
+</body>
+
+</html>
