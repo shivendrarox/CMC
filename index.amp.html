@@ -859,6 +859,84 @@
                                 </table>
                             </div>
                             <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+                                <div
+                                style="font-family:Helvetica;font-size:24px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;color:#444">
+                                <p style="text-align:center"><strong>Top 6
+                                        Trending Crypto Assets</strong></p>
+                            </div>
+                                <div class="widget-container">
+                                    <table class="widget-table">
+                                        <tbody>
+                                            <thead>
+                                                <tr>
+                                                    <!-- <th class="left">Rank</th> -->
+                                                    <th class="left widget-th">Name</th>
+                                                    <th class="center widget-th">Price</th>
+                                                    <th class="right widget-th">24H</th>
+                                                </tr>
+                                            </thead>
+                                        </tbody>
+                                    </table>
+                                    <!--entry point-->
+                <amp-list id="myList" width="auto" height="250" layout="fixed-height" src="https://crypto-table-amp.glitch.me/data/">
+                    <template type="amp-mustache">
+                        <table class="widget-table">
+                            <tbody>
+                                <tr>
+                                    <!-- <td style="width: 25%;" class="left">{{crypto.rank}}</td> -->
+                                    <td style="width: 60%;" class="left widget-td">
+                                        <div class="list-container">
+                                            <amp-img class="icon-img" width="16" height="16" src="{{crypto.symbol_img}}">
+                                            </amp-img>
+                                            <p class="crypto-list crypto-name">{{crypto.name}}</p>
+                                        </div>
+                                    </td>
+                                    <td style="width: 20%;" class="center price widget-td">&#36;{{crypto.price}}</td>
+                                    <td style="width: 20%;" class="right widget-td {{crypto.class_name}}">{{crypto.change_h}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+        
+                    </template>
+                </amp-list>
+    
+                <button class="refresh-btn" on="tap:myList.refresh,myList2.refresh,dateList.refresh;"><span class="refresh-btn-text">Refresh
+                    Prices</span></button>
+                                   </div>
+                                   <div style="background:#fff;background-color:#fff;margin:0 auto;max-width:600px">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                        style="background:#fff;background-color:#fff;width:100%">
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                    style="border:0 solid transparent;direction:ltr;font-size:0;padding:20px 0;padding-bottom:16px;padding-left:16px;padding-right:16px;padding-top:16px;text-align:center">
+                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:568px;" ><![endif]-->
+                                                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="font-size:0;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0"
+                                                            role="presentation"
+                                                            style="background-color:transparent;vertical-align:top"
+                                                            width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td
+                                                                        style="font-size:0;padding:10px 25px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;word-break:break-word">
+                                                                        <p
+                                                                            style="border-top:solid 1px #bbb;font-size:1px;margin:0 auto;width:100%">
+                                                                        </p>
+                                                                        <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #bbbbbb;font-size:1px;margin:0px auto;width:568px;" role="presentation" width="568px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+    </td></tr></table><![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             <div style="background:#fff;background-color:#fff;margin:0 auto;max-width:600px">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
                                     style="background:#fff;background-color:#fff;width:100%">
@@ -1039,40 +1117,7 @@
                                 </table>
                             </div>
                             <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-                            <div style="background:#fff;background-color:#fff;margin:0 auto;max-width:600px">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                    style="background:#fff;background-color:#fff;width:100%">
-                                    <tbody>
-                                        <tr>
-                                            <td
-                                                style="border:0 solid transparent;direction:ltr;font-size:0;padding:20px 0;padding-bottom:16px;padding-left:16px;padding-right:16px;padding-top:16px;text-align:center">
-                                                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:568px;" ><![endif]-->
-                                                <div class="mj-column-per-100 mj-outlook-group-fix"
-                                                    style="font-size:0;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                        role="presentation"
-                                                        style="background-color:transparent;vertical-align:top"
-                                                        width="100%">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td
-                                                                    style="font-size:0;padding:10px 25px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;word-break:break-word">
-                                                                    <p
-                                                                        style="border-top:solid 1px #bbb;font-size:1px;margin:0 auto;width:100%">
-                                                                    </p>
-                                                                    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #bbbbbb;font-size:1px;margin:0px auto;width:568px;" role="presentation" width="568px" ><tr><td style="height:0;line-height:0;"> &nbsp;
-</td></tr></table><![endif]-->
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!--[if mso | IE]></td></tr></table><![endif]-->
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
                             <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
                             <div style="background:#fff;background-color:#fff;margin:0 auto;max-width:600px">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
@@ -1092,11 +1137,7 @@
                                                             <tr>
                                                                 <td align="left"
                                                                     style="font-size:0;padding:10px 25px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;word-break:break-word">
-                                                                    <div
-                                                                        style="font-family:Helvetica;font-size:24px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;color:#444">
-                                                                        <p style="text-align:center"><strong>Top 6
-                                                                                Trending Crypto Assets</strong></p>
-                                                                    </div>
+                                                           
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -1109,45 +1150,7 @@
                                 </table>
                             </div>
                             <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-                               <div class="widget-container">
-                                <table class="widget-table">
-                                    <tbody>
-                                        <thead>
-                                            <tr>
-                                                <!-- <th class="left">Rank</th> -->
-                                                <th class="left widget-th">Name</th>
-                                                <th class="center widget-th">Price</th>
-                                                <th class="right widget-th">24H</th>
-                                            </tr>
-                                        </thead>
-                                    </tbody>
-                                </table>
-                                <!--entry point-->
-            <amp-list id="myList" width="auto" height="250" layout="fixed-height" src="https://crypto-table-amp.glitch.me/data/">
-                <template type="amp-mustache">
-                    <table class="widget-table">
-                        <tbody>
-                            <tr>
-                                <!-- <td style="width: 25%;" class="left">{{crypto.rank}}</td> -->
-                                <td style="width: 60%;" class="left widget-td">
-                                    <div class="list-container">
-                                        <amp-img class="icon-img" width="16" height="16" src="{{crypto.symbol_img}}">
-                                        </amp-img>
-                                        <p class="crypto-list crypto-name">{{crypto.name}}</p>
-                                    </div>
-                                </td>
-                                <td style="width: 20%;" class="center price widget-td">&#36;{{crypto.price}}</td>
-                                <td style="width: 20%;" class="right widget-td {{crypto.class_name}}">{{crypto.change_h}}%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-    
-                </template>
-            </amp-list>
-
-            <button class="refresh-btn" on="tap:myList.refresh,myList2.refresh,dateList.refresh;"><span class="refresh-btn-text">Refresh
-                Prices</span></button>
-                               </div>
+                     
 
                             <!--[if mso | IE]></td></tr></table></td></tr><![endif]-->
                                                                    
